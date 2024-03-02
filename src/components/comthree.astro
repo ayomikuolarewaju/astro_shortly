@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets"
+import img1 from '/public/images/icon-brand-recognition.svg'
+import img2 from '/public/images/icon-detailed-records.svg'
+import img3 from '/public/images/icon-fully-customizable.svg'
+const menus = [
+{img:img1,title:'Brand Recognition',subtitle:'Boost your brand recognition with each click.Generic links don’t mean a thing. Branded links help instil confidence in your content.'}, 
+{img:img2,title:'Detailed Records',subtitle:'Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.'}, 
+{img:img3,title:'Fully Customizable',subtitle:'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.'}, 
+]
+---
+
+<div class="flex-col justify-start gap-10 mt-20 bg-slate-100 md:w-[1200px] w-[450px] relative md:mx-auto mb-[50px] p-10" >
+    <div class="flex-col mx-auto justify-center w-[500px] mb-16  space-y-5">
+        <h2 class="w-[400px] md:text-4xl text-center text-xl font-bold ">Advanced Statistics </h2>
+        <p class="text-md text-center w-[400px]">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+    </div>
+    <div class="md:flex hidden justify-start md:gap-10  mt-10 p-16">
+     {menus.map((menu)=> 
+        <div class="bg-white rounded-md p-5 flex-col w-[400px] h-[250px] space-y-10 mb-20">
+           <div>
+              <Image src={menu.img} alt='logo' class=" size-20 rounded-full bg-black p-5 absolute -mt-20  " />
+            </div>
+            <div class="flex-col space-y-5">
+               <h3 class="font-semibold text-xl">{menu.title}</h3>
+               <p>{menu.subtitle}</p>
+            </div>
+        </div>
+     )}
+    </div>
+    <div class="md:hidden flex flex-col justify-start gap-10  mt-10 mb-24 mx-auto place-items-center space-y-10">
+      {menus.map((menu)=> 
+         <div class="bg-white rounded-md p-5 flex-col w-[250px] h-[250px] space-y-5">
+            <div>
+               <Image src={menu.img} alt='logo' class=" size-14 rounded-full bg-black p-3 absolute -mt-10  " />
+             </div>
+             <div class="flex-col space-y-5">
+                <h3 class="font-semibold text-xl">{menu.title}</h3>
+                <p>{menu.subtitle}</p>
+             </div>
+         </div>
+      )}
+     </div>
+</div>

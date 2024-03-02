@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets"
+import logo from "../../public/images/logo.svg"
+import Mainnav from "../components/Mainnav.astro"
+import Mininav from "../components/Mininav.astro"
+---
+
+
+
+
+  <div class="flex md:w-[1200px] mx-auto place-content-center place-items-center justify-between pt-3">
+    <div>
+      <Image src={logo} alt='logo'/>
+   </div>
+   <div>
+     <Mainnav/>
+   </div>
+   <div>
+     <Mininav/>
+   </div>
+   <div >
+     <button id="btndark" class="hover:bg-slate-500 hover:text-white p-2 dark:text-black dark:bg-white bg-gray-200 text-white text-xl border-black rounded-md border-2 ">
+       <img id="img" src="/images/sun.png" alt="" srcset="" width="25" height="25">
+     </button>
+   </div>
+  </div>
+
+ 
+<script>
+	
+	let darkmode = false
+  const btndark = document.getElementById("btndark")
+  const img = document.getElementById("img")
+  const setmode = document.getElementById("setmode")
+    btndark!.addEventListener( "click",()=>{
+       darkmode = !darkmode
+	     darkmode ? img!.setAttribute("src","./images/sun.png")  : img!.setAttribute("src","./images/moon.png")
+	     setmode!.classList.toggle('dark')
+	})
+
+</script>

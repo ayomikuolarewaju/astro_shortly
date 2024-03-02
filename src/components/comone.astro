@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets"
+import working from "../../public/images/illustration-working.svg"
+---
+
+
+
+<div class="md:hidden flex flex-col-reverse  mb-10">
+
+    <div class="md:hidden flex-col w-[400px]  space-y-10">
+        <div class="space-y-5">
+            <h1 class="text-7xl font-bold ">More than just shorter links</h1>
+            <p class="text-lg ">Build your brand’s recognition and get detailed insights on how your links are performing</p>
+        </div>
+        <div>
+           <button class="text-gray-200 bg-blue-700 p-2 w-full rounded-md pl-3 hover:text-white hover:bg-blue-400 hover:p-1 hover:w-[120px] hover:rounded-md hover:pl-2">
+            <a href="#">
+                Get Started
+            </a>
+        </button>
+        </div>
+    </div>
+    <div class="p-3 w-[500px]">
+        <Image src={working} alt='working'/>
+    </div>
+
+</div>
+
+<div class="hidden md:flex mb-10">
+
+    <div class="flex-col w-[600px]  space-y-10">
+        <div class="space-y-5">
+            <h1 class="text-7xl font-bold ">More than just shorter links</h1>
+            <p class="text-lg ">Build your brand’s recognition and get detailed insights on how your links are performing</p>
+        </div>
+        <div>
+           <button class="text-gray-200 bg-blue-700 p-2 w-[100px] rounded-md pl-3 hover:text-white hover:bg-blue-400 hover:p-1 hover:w-[120px] hover:rounded-md hover:pl-2">
+            <a href="#">
+                Get Started
+            </a>
+        </button>
+        </div>
+    </div>
+    <div class="">
+        <Image src={working} alt='working'/>
+    </div>
+
+</div>
