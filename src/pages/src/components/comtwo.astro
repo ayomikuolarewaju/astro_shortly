@@ -1,0 +1,41 @@
+---
+
+---
+
+<div class="rounded-xl bg-black bg-[url('./images/bg-shorten-mobile.svg')] md:bg-[url('./images/bg-shorten-desktop.svg')] md:w-[1000px] w-[400px] h-[200px] bg-no-repeat md:mx-auto justify-start">
+    <div class="flex w-full mx-auto place-content-center justify-start md:place-items-center gap-3 p-3">
+        <form class="flex w-full md:mx-auto md:place-content-center justify-start md:place-items-center gap-3 p-3" method="POST" id="form">
+            <input type="text" class="md:w-[800px] w-[300px] bg-white p-5 rounded-xl mx-auto mt-[50px] required " name="input1" id="input1">
+            <button id="btn1" class=" bg-green-400 md:w-[200px] w-[100px] md:text-lg text-xs p-5 rounded-xl font-bold text-white mt-[50px]"> Shorten it!</button>
+        </form>
+    </div>
+    <div>
+        <p id="input2" class="text-white font-semibold text-lg"></p>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('form') as HTMLFormElement
+    const input2 = document.getElementById('input2')
+    form?.addEventListener('submit',async(e)=>{
+      e.preventDefault()
+      const formdata = new FormData(form)
+      const data = formdata.get('input1')?.toString()
+      const res = await fetch('https://cleanuri.com/api/v1/shorten',{
+        mode: 'no-cors',
+        method:'POST',
+        headers:{
+          'Content-Type' : 'application/json'
+        },
+        body:JSON.stringify(data),
+      })
+      const result = await res.json()
+      console.log(result)
+      input2!.textContent = result
+
+    })
+    
+</script>
+
+
+

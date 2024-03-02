@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Comone from "../components/comone.astro"
+import Comtwo from "../components/comtwo.astro"
+import Comthree from "../components/comthree.astro"
+import Comfour from "../components/comfour.astro"
+
+import Footer from "../components/footer.astro"
+---
+
+<Layout  title="More than just shorter links">
+
+        <div class="flex-col md:w-[1200px] mx-auto place-content-center w:[500px] place-items-center justify-between pt-3 ">
+		    <div  class=" dark:bg-black bg-white h-screen mx-auto place-content-center place-items-center p-5 gap-5">
+
+			   <div>
+				 <Comone/>
+			   </div>
+			   <div>
+				<Comtwo/>
+			   </div>
+	           <div>
+				<Comthree/>
+			   </div>
+			   <div>
+				<Comfour/>
+			   </div>
+			   <div>
+				<Footer/>
+			   </div>
+		    </div>
+	    </div>
+	
+</Layout>
+
+
+
+
+
+
