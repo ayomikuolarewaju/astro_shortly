@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets"
-import bg from "../../public/images/bg-shorten-desktop.svg"
+
 ---
 
 <div class="rounded-xl bg-black bg-[url('./images/bg-shorten-mobile.svg')] md:bg-[url('./images/bg-shorten-desktop.svg')] md:w-[1000px] w-[400px] h-[200px] bg-no-repeat md:mx-auto justify-start">
@@ -16,7 +15,7 @@ import bg from "../../public/images/bg-shorten-desktop.svg"
 </div>
 
 <script>
-    const form = document.getElementById('form')
+    const form = document.getElementById('form') as HTMLFormElement
     const input2 = document.getElementById('input2')
     form?.addEventListener('submit',async(e)=>{
       e.preventDefault()
